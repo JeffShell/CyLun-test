@@ -1,13 +1,13 @@
 <template>
-  <div>Switch文档</div>
+  <div>
+    <Switch/>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
+import Switch from '../lib/Switch.vue'
 export default {
-  name: "SwitchDemo"
+  components: {Switch}
 }
 </script>
 
-<style scoped>
-
-</style>

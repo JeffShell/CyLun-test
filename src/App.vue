@@ -6,7 +6,8 @@
 import {ref, provide} from 'vue'
 export default {
   setup(){
-    const menuVisible  = ref(false)
+    const width = document.documentElement.clienWidth;
+    const menuVisible  = ref(width <= 500 ? false : true);
     provide('menuVisible', menuVisible )
   }
 }

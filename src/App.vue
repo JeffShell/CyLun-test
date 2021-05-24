@@ -7,7 +7,7 @@ import {ref, provide} from 'vue'
 import {router} from "./router";
 export default {
   setup(){
-    const width = document.documentElement.clienWidth;
+    const width = document.documentElement.clientWidth;
     const menuVisible  = ref(width <= 500 ? false : true);
     provide('menuVisible', menuVisible );
     router.afterEach(()=>{

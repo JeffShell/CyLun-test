@@ -1,5 +1,5 @@
 <template>
-  <button class="cy-button" :class="{[`theme-${theme}`]: theme}">
+  <button class="cy-button" :class="{[`cy-theme-${theme}`]: theme}">
     <slot />
   </button>
 </template>

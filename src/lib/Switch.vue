@@ -1,6 +1,8 @@
 
 <template>
-  <button @click="toggle" :class="{checked:value}"> <span></span> </button>
+  <button @click="toggle" class="cy-switch" :class="{'cy-checked':value}">
+    <span></span>
+  </button>
 </template>
 <script lang="ts">
 import { ref } from "vue";
@@ -16,46 +18,46 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @use "sass:math";
 $h: 22px;
 $h2: $h - 4px;
-button {
+.cy-switch {
   height: $h;
   width: $h * 2;
   border: none;
   background: #bfbfbf;
   border-radius: math.div($h, 2);
   position: relative;
-}
-span {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  height: $h2;
-  width: $h2;
-  background: white;
-  border-radius: math.div($h, 2);
-  transition: all 250ms;
-}
-button.checked {
-  background: #1890ff;
-}
-button.checked > span {
-  left: calc(100% - #{$h2} - 2px);
-}
-button:focus {
-  outline: none;
-}
-button:active {
   > span {
-    width: $h2 + 4px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: $h2;
+    width: $h2;
+    background: white;
+    border-radius: math.div($h, 2);
+    transition: all 250ms;
   }
-}
-button.checked:active {
-  > span {
-    width: $h2 + 4px;
-    margin-left: -4px;
+  &.cy-checked {
+    background: #1890ff;
+  }
+  &.cy-checked > span {
+    left: calc(100% - #{$h2} - 2px);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    > span {
+      width: $h2 + 4px;
+    }
+  }
+  &.cy-checked:active {
+    > span {
+      width: $h2 + 4px;
+      margin-left: -4px;
+    }
   }
 }
 </style>

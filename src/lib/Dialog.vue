@@ -1,12 +1,12 @@
 <template>
   <template v-if="visible">
-    <Teleport to='body'>
+    <Teleport to="body">
       <div class="cy-dialog-overlay" @click="onClickOverlay"></div>
       <div class="cy-dialog-wrapper">
         <div class="cy-dialog">
           <header>
             <slot name="title" />
-            <span class="cy-dialog-close" @click="close"></span>
+            <span @click="close" class="cy-dialog-close"></span>
           </header>
           <main>
             <slot name="content" />
@@ -20,59 +20,61 @@
     </Teleport>
   </template>
 </template>
+
 <script lang="ts">
 import Button from "./Button.vue";
 export default {
   props: {
     visible: {
       type: Boolean,
-      default: false,
+      default: false
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true,
+      default: true
     },
     ok: {
-      type: Function,
+      type: Function
     },
     cancel: {
-      type: Function,
-    },
+      type: Function
+    }
   },
   components: {
     Button,
   },
   setup(props, context) {
     const close = () => {
-      context.emit("update:visible", false);
-    };
+      context.emit('update:visible', false)
+    }
     const onClickOverlay = () => {
       if (props.closeOnClickOverlay) {
-        close();
+        close()
       }
-    };
+    }
     const ok = () => {
       if (props.ok?.() !== false) {
-        close();
+        close()
       }
-    };
+    }
     const cancel = () => {
-      context.emit("cancel");
-      close();
-    };
+      props.cancel?.()
+      close()
+    }
     return {
       close,
       onClickOverlay,
       ok,
-      cancel,
-    };
-  },
+      cancel
+    }
+  }
 };
 </script>
+
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
-.gulu-dialog {
+.cy-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);
@@ -94,7 +96,7 @@ $border-color: #d9d9d9;
     transform: translate(-50%, -50%);
     z-index: 11;
   }
-  > header {
+  >header {
     padding: 12px 16px;
     border-bottom: 1px solid $border-color;
     display: flex;
@@ -102,10 +104,10 @@ $border-color: #d9d9d9;
     justify-content: space-between;
     font-size: 20px;
   }
-  > main {
+  >main {
     padding: 12px 16px;
   }
-  > footer {
+  >footer {
     border-top: 1px solid $border-color;
     padding: 12px 16px;
     text-align: right;
@@ -118,7 +120,7 @@ $border-color: #d9d9d9;
     cursor: pointer;
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       height: 1px;
       background: black;

@@ -1,5 +1,5 @@
 <template>
-  <button class="cy-button" :class="classes">
+  <button class="cy-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -142,6 +142,20 @@ $red: red;
         color: darken($red, 10%);
       }
     }
+  }
+  &.cy-themen-button {
+    &[disabled]{
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.cy-theme-link,
+  &[disabled]{
+    cursor: not-allowed;
+    color: $grey;
   }
 }
 </style>

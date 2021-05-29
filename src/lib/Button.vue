@@ -80,17 +80,15 @@ $radius: 4px;
       background: darken(white, 5%);
     }
   }
-  &.cy-theme-button{
-    &.cy-size-big{
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px
-    }
-    &.cy-size-small{
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
-    }
+  &.cy-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.cy-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>

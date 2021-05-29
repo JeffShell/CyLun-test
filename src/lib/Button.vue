@@ -1,5 +1,6 @@
 <template>
   <button class="cy-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="cy-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -19,6 +20,14 @@ export default {
       type: String,
       default: "normal",
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props) {
     const { theme, size, level } = props;
@@ -40,6 +49,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .cy-button {
   box-sizing: border-box;
   height: $h;
@@ -54,8 +64,10 @@ $red: red;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+  transition: background 250ms;
   & + & {
     margin-left: 8px;
+  padding: 0 12px;
   }
   &:hover,
   &:focus {
@@ -97,6 +109,7 @@ $red: red;
     padding: 0 4px;
   }
   &.cy-theme-button {
+  padding: 0 12px;
     &.cy-level-main {
       background: $blue;
       color: white;
@@ -143,8 +156,8 @@ $red: red;
       }
     }
   }
-  &.cy-themen-button {
-    &[disabled]{
+  &.cy-theme-button {
+    &[disabled] {
       cursor: not-allowed;
       color: $grey;
       &:hover {
@@ -152,10 +165,26 @@ $red: red;
       }
     }
   }
-  &.cy-theme-link,
-  &[disabled]{
-    cursor: not-allowed;
-    color: $grey;
+  &.cy-theme-link, &.cy-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
   }
+  > .cy-loadingIndicator{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px; 
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: cy-spin 1s infinite linear;
+  }
+}
+@keyframes cy-spin {
+  0%{transform: rotate(0deg)} 
+  100%{transform: rotate(360deg)} 
 }
 </style>

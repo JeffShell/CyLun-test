@@ -1,29 +1,51 @@
 <template>
-<div class="cy-tabs">
-  <div class="cy-tabs-nav">
-  <div class="cy-tabs-nav-item" v-for="(t, index) in titles" :key="index">{{t}}</div>
+  <div class="cy-tabs">
+    <div class="cy-tabs-nav">
+      <div class="cy-tabs-nav-item"
+           v-for="(t,index) in titles" @click="select(t)"
+           :class="{selected: t=== selected}"
+           :key="index">
+        {{t}}
+      </div>
+    </div>
+    <div class="cy-tabs-content">
+      <component class="cy-tabs-content-item"
+                 :class="{selected: c.props.title === selected}"
+                 v-for="c in defaults"
+                 :is="c"/>
+    </div>
   </div>
-  <div class="cy-tabs-content">
-  <component class="cy-tabs-content-item" v-for="(c, index) in defaults" :is="c" :key="index" />
-  </div>
-</div>
 </template>
 
-<script>
+<script lang="ts">
 import Tab from './Tab.vue'
+import {computed} from "vue";
 export default {
-  setup(props, context){
+  props:{
+    selected: {
+      type: String
+    }
+  },
+  setup (props, context) {
     const defaults = context.slots.default()
-    defaults.forEach((tag) =>{
-      if(tag.type !== Tab){
+    defaults.forEach((tag) => {
+      if (tag.type !== Tab) {
         throw new Error('Tabs 子标签必须是Tab')
       }
+    })
+    const current = computed(()=>{
+      return defaults.filter((tag)=>{
+        return tag.props.title === props.selected
+      })[0]
     })
     const titles = defaults.map((tag) => {
       return tag.props.title
     })
+    const select = (title: string) => {
+      context.emit('update:selected', title)
+    }
     return {
-      defaults, titles
+      defaults, titles, current, select
     }
   }
 }
@@ -52,6 +74,12 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 8px 0;
+    &-item {
+      display: none;
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>

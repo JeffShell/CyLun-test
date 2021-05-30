@@ -1,7 +1,11 @@
 <template>
-<div>
-  <div v-for="(t, index) in titles" :key="index">{{t}}</div>
-  <component v-for="(c, index) in defaults" :is="c" :key="index" />
+<div class="cy-tabs">
+  <div class="cy-tabs-nav">
+  <div class="cy-tabs-nav-item" v-for="(t, index) in titles" :key="index">{{t}}</div>
+  </div>
+  <div class="cy-tabs-content">
+  <component class="cy-tabs-content-item" v-for="(c, index) in defaults" :is="c" :key="index" />
+  </div>
 </div>
 </template>
 
@@ -25,6 +29,29 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+$blue: #40a9ff;
+$color: #333;
+$border-color: #d9d9d9;
+.cy-tabs {
+  &-nav {
+    display: flex;
+    color: $color;
+    border-bottom: 1px solid $border-color;
+    &-item {
+      padding: 8px 0;
+      margin: 0 16px;
+      cursor: pointer;
+      &:first-child {
+        margin-left: 0;
+      }
+      &.selected {
+        color: $blue;
+      }
+    }
+  }
+  &-content {
+    padding: 8px 0;
+  }
+}
 </style>

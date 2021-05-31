@@ -1,4 +1,6 @@
 <template>
+  <div>
+
   <div class="topnav">
     <div class="bgc">
       <div class="ba"></div>
@@ -13,6 +15,18 @@
       </p>
     </div>
   </div>
+  <div class="features">
+    <svg class="icon">
+      <use xlink:href="#icon-vue"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-ts"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-light"></use>
+    </svg>
+    </div>
+  </div>
 </template>
 <script lang="ts">
 import Topnav from '../components/Topnav.vue'
@@ -21,6 +35,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$green: #02bcb0;
+$border-radius: 4px;
+$color: #007974;
 .topnav{
   position: relative;
   .bgc {
@@ -40,9 +57,16 @@ export default {
     border-color: transparent transparent transparent #fff;
     transform: translate(0%, 1%);
   }
+  .features {
+    >svg {
+      width: 64px;
+      height: 64px;
+    }
+  }
   .banner {
+    color: $color;
     min-width: 300px;
-    padding: 100px 0px;
+    padding: 100px 0;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -55,13 +79,18 @@ export default {
       padding: 8px 0;
       a {
         margin: 0 8px;
-        background: #fff;
+        background: $green;
+        color: white;
         display: inline-block;
         $h: 28px;
         height: $h;
         line-height: $h;
         border-radius: $h/5;
-        padding: 0 8px;
+        padding: 0 24px;
+        border-radius: $border-radius;
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }

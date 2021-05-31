@@ -11,10 +11,8 @@
       <div class="cy-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="cy-tabs-content">
-      <component class="cy-tabs-content-item"
-                 :class="{selected: c.props.title === selected}"
-                 v-for="c in defaults"
-                 :is="c"/>
+      <component :key="current.props.title"
+                 :is="current"/>
     </div>
   </div>
 </template>
@@ -51,9 +49,14 @@ export default {
         } = selectedItem.value.getBoundingClientRect()
         const left = left2 - left1
         indicator.value.style.left = left + 'px'
+      },
+      {
+        flush: 'post'
       })
     })
-
+    const current = computed(()=>{
+      return defaults.find(tag => tag.props.title === props.selected)
+    })
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -67,6 +70,7 @@ export default {
       context.emit('update:selected', title)
     }
     return {
+      current,
       defaults,
       titles,
       select,
@@ -89,8 +93,8 @@ $border-color: #d9d9d9;
     border-bottom: 1px solid $border-color;
     position: relative;
     &-item {
-      padding: 8px 0;
-      margin: 0 16px;
+      padding: 8px 0!important;
+      margin: 0 16px!important;
       cursor: pointer;
       &:first-child {
         margin-left: 0;
@@ -105,18 +109,12 @@ $border-color: #d9d9d9;
       background: $blue;
       left: 0;
       bottom: -1px;
-      width: 50px;
+      width: 100px;
       transition: all 250ms;
     }
   }
   &-content {
-    padding: 8px 0;
-    &-item {
-      display: none;
-      &.selected {
-        display: block;
-      }
-    }
+    padding: 8px 0!important;
   }
 }
 </style>

@@ -50,14 +50,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 $aside-index: 10;
-.router-link-active {
-  text-decoration: underline;
-}
+
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #d6fffc;
   > .nav {
     flex-shrink: 0;
   }
@@ -79,10 +76,13 @@ $aside-index: 10;
     flex-grow: 1;
     padding: 16px 0;
     background: #fff;
+    padding: 100px;
   }
 }
 aside {
-  background: lightblue;
+  color: #737372;
+  box-shadow:5px 0px 5px rgb(51 51 51 / 10%);
+  background-color: #fff;
   width: 150px;
   padding:70px 0 16px 0;
   position: fixed;
@@ -91,6 +91,7 @@ aside {
   height: 100%;
   z-index: $aside-index;
   > h2 {
+    color: #007974;
     margin-bottom: 4px;
     padding: 0 16px;
   }
@@ -99,10 +100,13 @@ aside {
       >a {
         display: block;
         padding: 4px 16px;
+        border-radius: 6px;
+        margin: 10px 15px;
         text-decoration: none;
       }
       .router-link-active {
-        background: white;
+        background-color: #02bcb0;
+        color: #007974;
       }
     }
   }

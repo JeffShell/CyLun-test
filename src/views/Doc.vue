@@ -57,6 +57,7 @@ $aside-index: 10;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #d6fffc;
   > .nav {
     flex-shrink: 0;
   }

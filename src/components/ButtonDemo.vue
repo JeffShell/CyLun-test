@@ -1,6 +1,10 @@
 <template>
   <div>Button文档</div>
-  
+  <Demo :component="Button1Demo" />
+  <Demo :component="Button2Demo" />
+  <Demo :component="Button3Demo" />
+  <Demo :component="Button4Demo" />
+  <Demo :component="Button5Demo" />
 </template>
 
 <script lang="ts">

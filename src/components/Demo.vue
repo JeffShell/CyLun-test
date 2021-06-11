@@ -33,8 +33,6 @@ export default {
     });
     const showCode = () =>{
        codeVisible.value = !codeVisible.value
-       console.log(codeVisible.value);
-       
     };
     const codeVisible = ref(false);
     return {
@@ -64,13 +62,18 @@ $border-color: #d9d9d9;
     // border-top: 1px dashed $border-color;
   }
   &-code {
-    padding: 8px 16px;
+    // padding: 8px 16px;
     // border-top: 1px dashed $border-color;
     > pre {
-      width: 100%;
+      border-radius: 6px;
       line-height: 1.1;
       font-family: Consolas, "Courier New", Courier, monospace;
       margin: 0;
+    }
+    @media(max-width: 500px) {
+      > pre{
+      width: 100vw;
+      }
     }
   }
 }

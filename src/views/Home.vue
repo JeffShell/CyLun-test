@@ -158,7 +158,7 @@ $color: #007974;
     }
   }
   @media (max-width: 500px) {
-    ::v-deep .toggleMenu {
+    :deep(.toggleMenu) {
       display: none;
     }
   }  

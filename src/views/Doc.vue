@@ -71,7 +71,7 @@ $aside-index: 10;
         }
       }
       > main {
-        padding: 20px 10px;
+        padding: 20px 0px;
       }
     }
   }
@@ -119,18 +119,28 @@ aside {
           content: '';
           display: inline-block;
           width: 5px;
-          height: 35px;
+          height: 36px;
           position: absolute;
           bottom: 50%;
-          transform: translateY(50%);
           right: 0;
+          margin-bottom:-18px;
           background-color: #02bcb0;
+          animation: scale-up-ver-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
         }
       }
     }
   }
 }
+
 main {
   overflow: auto;
+}
+@keyframes scale-up-ver-center {
+  0% {
+    transform: scaleY(0.4);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 </style>

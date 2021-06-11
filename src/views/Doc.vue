@@ -89,7 +89,6 @@ $aside-index: 10;
 }
 aside {
   color: #737372;
-  border-right: 1px solid red;
   background: rgba(255, 255, 255, .7);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(15px);
@@ -106,6 +105,7 @@ aside {
   }
   > ol {
     > li {
+        position: relative;
       >a {
         width: 250px;
         display: block;
@@ -113,8 +113,18 @@ aside {
         text-decoration: none;
       }
       .router-link-active {
-        background-color: #02bcb0;
         color: #007974;
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 5px;
+          height: 35px;
+          position: absolute;
+          bottom: 50%;
+          transform: translateY(50%);
+          right: 0;
+          background-color: #02bcb0;
+        }
       }
     }
   }

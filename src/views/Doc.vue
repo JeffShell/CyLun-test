@@ -92,6 +92,7 @@ aside {
   background: rgba(255, 255, 255, .7);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(15px);
+  border-right: 2px solid #eeeeee;
   padding:70px 0 16px 0;
   position: fixed;
   top: 0;

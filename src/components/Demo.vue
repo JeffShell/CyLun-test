@@ -5,8 +5,7 @@
       <component :is="component" />
     </div>
     <div class="demo-actions">
-      <Button @click="showCode">查看代码</Button>
-      <Button @click="hideCode">隐藏代码</Button>
+      <Button @click="showCode">{{codeVisible ? '隐藏代码' : '查看代码'}}</Button>
     </div>
     <div class="demo-code" v-if="codeVisible">
       <pre class="language-html" v-html="html" />
@@ -32,14 +31,16 @@ export default {
     const html = computed(() => {
       return Prism.highlight(props.component.__sourceCode, Prism.languages.html, "html");
     });
-    const showCode = () => codeVisible.value = true;
-    const hideCode = () => codeVisible.value = false;
+    const showCode = () =>{
+       codeVisible.value = !codeVisible.value
+       console.log(codeVisible.value);
+       
+    };
     const codeVisible = ref(false);
     return {
       Prism,
       html,
       showCode,
-      hideCode,
       codeVisible
     };
   },
@@ -48,24 +49,25 @@ export default {
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
 .demo {
-  border: 1px solid $border-color;
+  // border: 1px solid $border-color;
   margin: 16px 0 32px;
   > h2 {
-    font-size: 20px;
+    font-size: 35px;
     padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
+    // border-bottom: 1px solid $border-color;
   }
   &-component {
     padding: 16px;
   }
   &-actions {
     padding: 8px 16px;
-    border-top: 1px dashed $border-color;
+    // border-top: 1px dashed $border-color;
   }
   &-code {
     padding: 8px 16px;
-    border-top: 1px dashed $border-color;
+    // border-top: 1px dashed $border-color;
     > pre {
+      width: 100%;
       line-height: 1.1;
       font-family: Consolas, "Courier New", Courier, monospace;
       margin: 0;

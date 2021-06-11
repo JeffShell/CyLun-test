@@ -69,7 +69,7 @@ $color: #007974;
       grid-template-columns: auto auto;
       grid-template-rows: 1fr auto;
       > h3 {
-        color: #3a5169;
+        color: c#3a5169;
         margin-bottom: 20px;
         grid-area: title;
         font-size: 28px;

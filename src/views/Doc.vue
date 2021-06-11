@@ -64,6 +64,15 @@ $aside-index: 10;
     padding-left: 156px;
     @media (max-width: 500px) {
       padding-left: 0;
+      > aside {
+        width: 100vw;
+        > ol> li> a{
+          width: 100vw;
+        }
+      }
+      > main {
+        padding: 20px 10px;
+      }
     }
   }
 }
@@ -74,16 +83,16 @@ $aside-index: 10;
   }
   > main {
     flex-grow: 1;
-    padding: 16px 0;
     background: #fff;
-    padding: 100px;
+    padding: 100px 150px;
   }
 }
 aside {
   color: #737372;
-  box-shadow:5px 0px 5px rgb(51 51 51 / 10%);
-  background-color: #fff;
-  width: 150px;
+  border-right: 1px solid red;
+  background: rgba(255, 255, 255, .7);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(15px);
   padding:70px 0 16px 0;
   position: fixed;
   top: 0;
@@ -92,16 +101,15 @@ aside {
   z-index: $aside-index;
   > h2 {
     color: #007974;
-    margin-bottom: 4px;
+    margin: 14px 0;
     padding: 0 16px;
   }
   > ol {
     > li {
       >a {
+        width: 250px;
         display: block;
-        padding: 4px 16px;
-        border-radius: 6px;
-        margin: 10px 15px;
+        padding: 14px 16px;
         text-decoration: none;
       }
       .router-link-active {

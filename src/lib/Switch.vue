@@ -1,4 +1,3 @@
-
 <template>
   <button @click="toggle" class="cy-switch" :class="{'cy-checked':value}">
     <span></span>

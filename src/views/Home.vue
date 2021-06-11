@@ -18,25 +18,16 @@
   <div class="features">
     <ul>
       <li>
-        <svg>
-          <use xlink:href="#icon-ts"></use>
-        </svg>
         <h3>基于 TypeScript </h3>
-        <p>源代码采用 TypeScript 书写</p>
+        <p>源代码采用 TypeScript 书写,把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不不不不</p>
       </li>
       <li>
-        <svg>
-          <use xlink:href="#icon-vue"></use>
-        </svg>
         <h3>基于 Vue 3</h3>
-        <p>骄傲地使用了 Vue 3 Composition API</p>
+        <p>源代码采用 TypeScript 书写,把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不不不不</p>
       </li>
       <li>
-        <svg>
-          <use xlink:href="#icon-light"></use>
-        </svg>
         <h3>代码易读</h3>
-        <p>每个组件的源代码都极其简洁</p>
+        <p>源代码采用 TypeScript 书写,把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不不不不</p>
       </li>
     </ul>
     </div>
@@ -55,56 +46,64 @@ $color: #007974;
 
 .features {
   margin: 64px auto;
-  padding: 0 16px;
-  @media (min-width: 800px) {
-    width: 800px;
-    > ul {
-      > li {
-        width: 50%;
-      }
-    }
-  }
-  @media (min-width: 1200px) {
-    width: 1200px;
-    > ul {
-      > li {
-        width: 33.33333%;
-      }
-    }
-  }
+  // padding: 0 16px;
+
   >ul {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
-    margin-top: 450px;
+    margin-top: 500px;
+    padding: 50px 30px;
+    border-bottom: 1px solid #eaecef;
+    border-top: 1px solid #eaecef;
     > li {
-      box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
       border-radius: 3px;
       padding: 10px;
-      width: 370px;
       margin: 16px 0;
       display: grid;
       justify-content: start;
       align-content: space-between;
       grid-template-areas:
-        "icon title"
-        "icon text";
-      grid-template-columns: 80px auto;
+        "title"
+        "text";
+      grid-template-columns: auto auto;
       grid-template-rows: 1fr auto;
-
-      > svg {
-        grid-area: icon;
-        width: 64px;
-        height: 64px;
-      }
-
       > h3 {
+        color: #3a5169;
+        margin-bottom: 20px;
         grid-area: title;
         font-size: 28px;
       }
-
       > p {
+        text-indent:2rem;
+        font-size: 14px;
+        color: #00798a;
         grid-area: text
+      }
+    }
+  }  
+  @media (min-width: 1200px) {
+    width: 1200px;
+    > ul {
+      > li {
+        margin: 0 10px;
+        width: 300px;
+      }
+    }
+  }  
+  @media (min-width: 1000px) {
+    > ul {
+      > li {
+        margin: 0 20px;
+        width: 300px;
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    > ul {
+    margin-top: 300px;
+      > li {
+        width: 100%;
       }
     }
   }

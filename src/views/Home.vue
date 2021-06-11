@@ -1,6 +1,5 @@
 <template>
   <div>
-
   <div class="topnav">
     <div class="bgc">
       <div class="ba"></div>
@@ -158,5 +157,10 @@ $color: #007974;
       }
     }
   }
+  @media (max-width: 500px) {
+    ::v-deep .toggleMenu {
+      display: none;
+    }
+  }  
 }
 </style>

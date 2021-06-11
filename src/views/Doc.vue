@@ -50,7 +50,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 $aside-index: 10;
-
+$aside-width: 250px;
 .layout {
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ $aside-index: 10;
   > .content {
     flex-grow: 1;
     padding-top: 60px;
-    padding-left: 156px;
+    padding-left: $aside-width;
     @media (max-width: 500px) {
       padding-left: 0;
       > aside {
@@ -84,7 +84,7 @@ $aside-index: 10;
   > main {
     flex-grow: 1;
     background: #fff;
-    padding: 100px 150px;
+    padding: 100px 25px;
   }
 }
 aside {
@@ -108,7 +108,7 @@ aside {
     > li {
         position: relative;
       >a {
-        width: 250px;
+        width: $aside-width;
         display: block;
         padding: 14px 16px;
         text-decoration: none;

@@ -53,9 +53,9 @@ export default {
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
 h2 {
-    font-size: 35px;
-    padding: 8px 0px;
-  }
+  font-size: 35px;
+  padding: 8px 0px;
+}
 .demo {
   &-component {
     border: 1px solid #eee;
@@ -76,15 +76,23 @@ h2 {
       line-height: 1.1;
       font-family: Consolas, "Courier New", Courier, monospace;
       margin: 0;
+      scrollbar-width: none; /* firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+      // overflow-x: hidden;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
     }
     &-enter {
       height: 400px;
-	    transition:height 500ms;
+      transition: height 500ms;
     }
     &-leave {
-      padding: 0 16px; 
+      padding: 0 16px;
       height: 0px;
-	    transition:height 500ms, padding 500ms;
+      transition: height 500ms, padding 500ms;
     }
   }
 }

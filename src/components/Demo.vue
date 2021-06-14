@@ -3,11 +3,11 @@
   <div class="demo-component">
     <component :is="component" />
   </div>
-  <div class="demo-actions">
-    <Button @click="showCode">{{codeVisible ? '隐藏代码' : '查看代码'}}</Button>
-  </div>
   <div class="demo-code">
     <pre class="language-html" v-html="html" :class="codeVisible ? 'demo-code-enter' : 'demo-code-leave'"></pre>
+  </div>
+  <div class="demo-actions">
+    <button @click="showCode">{{codeVisible ? '隐藏代码' : '查看代码'}}</button>
   </div>
 </template>
 
@@ -58,10 +58,17 @@ h2 {
   }
 .demo {
   &-component {
-    padding: 16px 0;
+    border: 1px solid #eee;
+    padding: 16px 10px;
   }
   &-actions {
-    padding: 8px 0px;
+    border: 1px solid #eee;
+    padding: 0px;
+    > button {
+      border: 0;
+      width: 100%;
+      height: 50px;
+    }
   }
   &-code {
     > .language-html {

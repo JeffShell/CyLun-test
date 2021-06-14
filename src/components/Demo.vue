@@ -54,15 +54,14 @@ export default {
 $border-color: #d9d9d9;
 h2 {
     font-size: 35px;
-    padding: 8px 16px;
+    padding: 8px 0px;
   }
 .demo {
-  margin: 16px 0 32px;
   &-component {
-    padding: 16px;
+    padding: 16px 0;
   }
   &-actions {
-    padding: 8px 16px;
+    padding: 8px 0px;
   }
   &-code {
     > .language-html {
@@ -72,18 +71,13 @@ h2 {
       margin: 0;
     }
     &-enter {
-      height: 500px;
+      height: 400px;
 	    transition:height 500ms;
     }
     &-leave {
       padding: 0 16px; 
       height: 0px;
 	    transition:height 500ms, padding 500ms;
-    }
-    @media (max-width: 500px) {
-      > .language-html {
-        width: 100vw;
-      }
     }
   }
 }

@@ -71,7 +71,7 @@ $aside-width: 250px;
         }
       }
       > main {
-        padding: 20px 0px;
+        padding: 20px 20px;
       }
     }
   }

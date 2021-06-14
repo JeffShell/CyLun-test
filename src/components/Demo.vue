@@ -86,7 +86,7 @@ h2 {
       }
     }
     &-enter {
-      height: 400px;
+      height: 320px;
       transition: height 500ms;
     }
     &-leave {

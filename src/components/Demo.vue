@@ -1,16 +1,13 @@
 <template>
-  <div class="demo">
-    <h2>{{component.__sourceCodeTitle}}</h2>
-    <div class="demo-component">
-      <component :is="component" />
-    </div>
-    <div class="demo-actions">
-      <Button @click="showCode">{{codeVisible ? '隐藏代码' : '查看代码'}}</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
-      <pre class="language-html" v-html="html" />
-    </div>
-
+  <h2>{{component.__sourceCodeTitle}}</h2>
+  <div class="demo-component">
+    <component :is="component" />
+  </div>
+  <div class="demo-actions">
+    <Button @click="showCode">{{codeVisible ? '隐藏代码' : '查看代码'}}</Button>
+  </div>
+  <div class="demo-code">
+    <pre class="language-html" v-html="html" :class="codeVisible ? 'demo-code-enter' : 'demo-code-leave'"></pre>
   </div>
 </template>
 
@@ -21,6 +18,11 @@ import "prismjs/themes/prism-tomorrow.css";
 import { computed, ref } from "vue";
 const Prism = (window as any).Prism;
 export default {
+  data() {
+    return {
+      show: true,
+    };
+  },
   components: {
     Button,
   },
@@ -29,29 +31,33 @@ export default {
   },
   setup(props) {
     const html = computed(() => {
-      return Prism.highlight(props.component.__sourceCode, Prism.languages.html, "html");
+      return Prism.highlight(
+        props.component.__sourceCode,
+        Prism.languages.html,
+        "html"
+      );
     });
-    const showCode = () =>{
-       codeVisible.value = !codeVisible.value
+    const showCode = () => {
+      codeVisible.value = !codeVisible.value;
     };
     const codeVisible = ref(false);
     return {
       Prism,
       html,
       showCode,
-      codeVisible
+      codeVisible,
     };
   },
 };
 </script>
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
-.demo {
-  margin: 16px 0 32px;
-  > h2 {
+h2 {
     font-size: 35px;
     padding: 8px 16px;
   }
+.demo {
+  margin: 16px 0 32px;
   &-component {
     padding: 16px;
   }
@@ -59,27 +65,26 @@ $border-color: #d9d9d9;
     padding: 8px 16px;
   }
   &-code {
-    // animation: scale-up-ver-top 500ms cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards;
-    > pre {
+    > .language-html {
+      box-sizing: content-box;
       line-height: 1.1;
       font-family: Consolas, "Courier New", Courier, monospace;
       margin: 0;
     }
-    @media(max-width: 500px) {
-      > pre{
-      width: 100vw;
+    &-enter {
+      height: 500px;
+	    transition:height 500ms;
+    }
+    &-leave {
+      padding: 0 16px; 
+      height: 0px;
+	    transition:height 500ms, padding 500ms;
+    }
+    @media (max-width: 500px) {
+      > .language-html {
+        width: 100vw;
       }
     }
-  }
-}
-@keyframes scale-up-ver-top {
-  0% {
-    transform: scaleY(0);
-    transform-origin: 100% 0%;
-  }
-  100% {
-    transform: scaleY(1);
-    transform-origin: 100% 0%;
   }
 }
 </style>

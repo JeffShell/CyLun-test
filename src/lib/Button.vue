@@ -1,6 +1,6 @@
 <template>
   <button class="cy-button" :class="classes" :disabled="disabled">
-    <span v-if="loading" class="cy-loadingIndicator"></span>
+    <div v-if="loading" class="cy-loadingIndicator"></div>
     <slot />
   </button>
 </template>
@@ -22,8 +22,8 @@ export default {
     },
     loading: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   setup(props) {
     const { theme, size } = props;
@@ -38,14 +38,14 @@ export default {
 };
 </script>
 <style lang="scss">
-$h: 32px;
 $color: #fff;
 $blue: #40a9ff;
 $radius: 6px;
 $red: red;
 $grey: grey;
 .cy-button {
-  height: $h;
+  position: relative;
+  height: 32px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -58,7 +58,20 @@ $grey: grey;
   font-size: 17px;
   line-height: 1.471;
   padding: 10px 19px;
-  margin-left: 8px;
+  & + & {
+    margin-left: 8px;
+  }
+  &:hover,
+  &:focus {
+    color: $blue;
+    border-color: $blue;
+  }
+  &:focus {
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
   &.cy-theme-warning {
     background: #f1c40f;
   }
@@ -86,6 +99,32 @@ $grey: grey;
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
+  }
+  &[disabled] {
+    cursor: not-allowed;
+    color: $grey;
+    &:hover {
+      border-color: $grey;
+    }
+  }
+  > .cy-loadingIndicator {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 4px;
+    border-radius: 50%;
+    border-color: $color $color $color transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: cy-spin 1s infinite linear;
+  }
+}
+@keyframes cy-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>

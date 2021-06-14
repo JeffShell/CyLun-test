@@ -2,7 +2,7 @@
 支持 disabled
 </demo>
 <template>
-<Button disabled theme="default">禁用按钮</Button>
+<Button disabled>禁用按钮</Button>
 </template>
 
 <script lang="ts">

@@ -3,9 +3,13 @@
 </demo>
 <template>
 <div>
-  <Button>你好</Button>
-  <Button theme="link">你好</Button>
-  <Button theme="text">你好</Button>
+  <Button>Primary</Button>
+  <Button theme="warning">Warning</Button>
+  <Button theme="default">Default</Button>
+  <Button theme="danger">Danger</Button>
+  <Button theme="success">Success</Button>
+  <Button theme="inverse">Inverse</Button>
+  <Button theme="info">Info</Button>
 </div>
 </template>
 

@@ -44,35 +44,28 @@ export default {
 </script>
 <style lang="scss">
 $h: 32px;
-$border-color: #d9d9d9;
-$color: #333;
+$color: #fff;
 $blue: #40a9ff;
-$radius: 4px;
+$radius: 6px;
 $red: red;
 $grey: grey;
 .cy-button {
   box-sizing: border-box;
   height: $h;
-  padding: 0 12px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
-  background: white;
+  background: #48c9b0;
   color: $color;
-  border: 1px solid $border-color;
+  border: 1px solid $color;
   border-radius: $radius;
-  box-shadow: 0 1px 0 fade-out(black, 0.95);
-  transition: background 250ms;
+  font-size: 17px;
+  line-height: 1.471;
   & + & {
     margin-left: 8px;
-  padding: 0 12px;
-  }
-  &:hover,
-  &:focus {
-    color: $blue;
-    border-color: $blue;
+    padding: 0 12px;
   }
   &:focus {
     outline: none;
@@ -98,6 +91,24 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
+  &.cy-theme-warning {
+    background: #f1c40f;
+  }
+  &.cy-theme-default {
+    background: #bdc3c7;
+  }
+  &.cy-theme-danger {
+    background: #e74c3c;
+  }
+  &.cy-theme-success {
+    background: #2ecc71;
+  }
+  &.cy-theme-inverse {
+    background: #34495e;
+  }
+  &.cy-theme-info {
+    background: #3498db;
+  }
   &.cy-size-big {
     font-size: 24px;
     height: 48px;
@@ -109,7 +120,7 @@ $grey: grey;
     padding: 0 4px;
   }
   &.cy-theme-button {
-  padding: 0 12px;
+    padding: 10px 19px;
     &.cy-level-main {
       background: $blue;
       color: white;

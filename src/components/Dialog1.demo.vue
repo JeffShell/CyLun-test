@@ -6,11 +6,11 @@
   <Button @click="toggle">打开对话框</Button>
   <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
     <template v-slot:content>
-      <strong>hi</strong>
-      <div>hi2</div>
+      <strong>这是个人框架</strong>
+      <div>基于Vue3 + TS 编写的框架</div>
     </template>
     <template v-slot:title>
-      <strong>加粗的标题</strong>
+      <strong>纯风框架</strong>
     </template>
     <template v-slot:ok>
       确认

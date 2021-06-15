@@ -22,10 +22,10 @@ export default {
   setup() {
     const showDialog = () => {
       openDialog({
-        title: h('strong', {}, '标题'),
-        content: '你好',
-        ok: "ok",
-        cancel: "cancel"
+        title: h('strong', {}, '方便的标题'),
+        content: '内容可以按自己喜欢的来写',
+        ok: "确认",
+        cancel: "取消"
       })
     }
     return {

@@ -63,7 +63,7 @@ $grey: grey;
   }
   &:hover,
   &:focus {
-    color: $blue;
+    color: $color;
     border-color: $blue;
   }
   &:focus {

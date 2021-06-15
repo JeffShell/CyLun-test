@@ -1,18 +1,27 @@
 <template>
-  <button @click="toggle" class="cy-switch" :class="{'cy-checked':value}">
+  <button @click="toggle" class="cy-switch" :class="[{'cy-checked':value}, classes]">
     <span></span>
   </button>
 </template>
 <script lang="ts">
+import { computed } from "vue";
 export default {
   props: {
     value: Boolean,
+    theme: {
+      type: String,
+      default: "switch",
+    },
   },
   setup(props, context) {
+    const { theme } = props;
     const toggle = () => {
       context.emit("update:value", !props.value);
     };
-    return { toggle };
+    const classes = computed(() => {
+      return { [`cy-theme-${theme}`]: theme };
+    });
+    return { toggle, classes };
   },
 };
 </script>
@@ -27,6 +36,7 @@ $h2: $h - 4px;
   background: #bfbfbf;
   border-radius: math.div($h, 2);
   position: relative;
+  margin: 0 10px;
   > span {
     position: absolute;
     top: 2px;
@@ -38,7 +48,22 @@ $h2: $h - 4px;
     transition: all 250ms;
   }
   &.cy-checked {
-    background: #1890ff;
+    background: #48c9b0;
+    &.cy-theme-warning {
+      background: #f1c40f;
+    }
+    &.cy-theme-danger {
+      background: #e74c3c;
+    }
+    &.cy-theme-success {
+      background: #2ecc71;
+    }
+    &.cy-theme-inverse {
+      background: #34495e;
+    }
+    &.cy-theme-info {
+      background: #3498db;
+    }
   }
   &.cy-checked > span {
     left: calc(100% - #{$h2} - 2px);

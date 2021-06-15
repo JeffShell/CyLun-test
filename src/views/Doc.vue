@@ -116,6 +116,7 @@ aside {
         text-decoration: none;
       }
       .router-link-active {
+        background-color: #f4fffe;
         color: #007974;
         &::after {
           content: '';

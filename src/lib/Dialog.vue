@@ -12,8 +12,12 @@
             <slot name="content" />
           </main>
           <footer>
-            <Button level="main" @click="ok">OK</Button>
-            <Button @click="cancel">Cancel</Button>
+            <Button @click="onClickOk">
+              <slot name="ok"/>
+            </Button>
+            <Button @click="onCLickCancel">
+              <slot name="cancel"/>
+            </Button>
           </footer>
         </div>
       </div>
@@ -33,10 +37,10 @@ export default {
       type: Boolean,
       default: true
     },
-    ok: {
+    onClickOk: {
       type: Function
     },
-    cancel: {
+    onCLickCancel: {
       type: Function
     }
   },
@@ -52,27 +56,27 @@ export default {
         close()
       }
     }
-    const ok = () => {
-      if (props.ok?.() !== false) {
+    const onClickOk = () => {
+      if (props.onClickOk?.() !== false) {
         close()
       }
     }
-    const cancel = () => {
-      props.cancel?.()
+    const onCLickCancel = () => {
+      props.onCLickCancel?.()
       close()
     }
     return {
       close,
       onClickOverlay,
-      ok,
-      cancel
+      onClickOk,
+      onCLickCancel
     }
   }
 };
 </script>
 
 <style lang="scss">
-$radius: 4px;
+$radius: 6px;
 $border-color: #d9d9d9;
 .cy-dialog {
   background: white;
@@ -108,9 +112,10 @@ $border-color: #d9d9d9;
     padding: 12px 16px;
   }
   >footer {
-    border-top: 1px solid $border-color;
+    border-radius: $radius;
     padding: 12px 16px;
     text-align: right;
+    background-color: #ecf0f1;
   }
   &-close {
     position: relative;

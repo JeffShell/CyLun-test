@@ -4,6 +4,7 @@ export const openDialog = (options) => {
   const { title, content, ok, cancel } = options;
   const div = document.createElement("div");
   document.body.appendChild(div);
+  
   const close = () => {
       //@ts-ignore
     app.unmount(div);
@@ -20,11 +21,11 @@ export const openDialog = (options) => {
                 close();
               }
             },
-            ok, cancel
           },
           {
             title,
             content,
+            ok, cancel
           }
       );
     },

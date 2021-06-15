@@ -12,6 +12,12 @@
     <template v-slot:title>
       <strong>加粗的标题</strong>
     </template>
+    <template v-slot:ok>
+      确认
+    </template>
+    <template v-slot:cancel>
+      取消
+    </template>
   </Dialog>
 </div>
 </template>
@@ -22,9 +28,6 @@ import Button from '../lib/Button.vue'
 import {
   ref
 } from 'vue'
-import {
-  openDialog
-} from '../lib/openDialog'
 export default {
   components: {
     Dialog,

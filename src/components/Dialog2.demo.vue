@@ -1,5 +1,5 @@
 <demo>
-一键打开 Dialog
+直接使用默认对话框
 </demo>
 <template>
 <div>
@@ -10,7 +10,6 @@
 <script lang="ts">
 import Button from '../lib/Button.vue'
 import {
-  ref,
   h
 } from 'vue'
 import {
@@ -25,12 +24,8 @@ export default {
       openDialog({
         title: h('strong', {}, '标题'),
         content: '你好',
-        ok() {
-          console.log('ok')
-        },
-        cancel() {
-          console.log('cancel')
-        }
+        ok: "ok",
+        cancel: "cancel"
       })
     }
     return {

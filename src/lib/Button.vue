@@ -72,23 +72,22 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.cy-theme-warning {
-    background: #f1c40f;
-  }
-  &.cy-theme-default {
-    background: #bdc3c7;
-  }
-  &.cy-theme-danger {
-    background: #e74c3c;
-  }
-  &.cy-theme-success {
-    background: #2ecc71;
-  }
-  &.cy-theme-inverse {
-    background: #34495e;
-  }
-  &.cy-theme-info {
-    background: #3498db;
+  &.cy-theme {
+    &-warning {
+      background: #f1c40f;
+    }
+    &-danger {
+      background: #e74c3c;
+    }
+    &-success {
+      background: #2ecc71;
+    }
+    &-inverse {
+      background: #34495e;
+    }
+    &-info {
+      background: #3498db;
+    }
   }
   &.cy-size-big {
     font-size: 24px;
@@ -100,11 +99,13 @@ $grey: grey;
     height: 20px;
     padding: 0 4px;
   }
-  &[disabled] {
-    cursor: not-allowed;
-    color: $grey;
-    &:hover {
-      border-color: $grey;
+  &.cy-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
     }
   }
   > .cy-loadingIndicator {

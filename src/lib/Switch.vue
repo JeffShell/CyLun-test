@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" class="cy-switch" :class="[{'cy-checked':value}, classes]">
+  <button @click="toggle" :disabled="disabled" class="cy-switch" :class="[{'cy-checked':value}, classes]">
     <span></span>
   </button>
 </template>
@@ -11,6 +11,10 @@ export default {
     theme: {
       type: String,
       default: "switch",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props, context) {
@@ -29,6 +33,7 @@ export default {
 @use "sass:math";
 $h: 22px;
 $h2: $h - 4px;
+$grey: #9c9c9c;
 .cy-switch {
   height: $h;
   width: $h * 2;
@@ -47,24 +52,34 @@ $h2: $h - 4px;
     border-radius: math.div($h, 2);
     transition: all 250ms;
   }
-  &.cy-checked {
-    background: #48c9b0;
-    &.cy-theme-warning {
-      background: #f1c40f;
-    }
-    &.cy-theme-danger {
-      background: #e74c3c;
-    }
-    &.cy-theme-success {
-      background: #2ecc71;
-    }
-    &.cy-theme-inverse {
-      background: #34495e;
-    }
-    &.cy-theme-info {
-      background: #3498db;
+  &[disabled] {
+    cursor: not-allowed;
+    color: $grey;
+    &:hover {
+      border-color: $grey;
     }
   }
+  &.cy-checked {
+    background: #48c9b0;
+    &.cy-theme {
+      &-warning {
+        background: #f1c40f;
+      }
+      &-danger {
+        background: #e74c3c;
+      }
+      &-success {
+        background: #2ecc71;
+      }
+      &-inverse {
+        background: #34495e;
+      }
+      &-info {
+        background: #3498db;
+      }
+    }
+  }
+
   &.cy-checked > span {
     left: calc(100% - #{$h2} - 2px);
   }

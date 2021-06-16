@@ -42,11 +42,8 @@ export default {
 $green: #02bcb0;
 $border-radius: 4px;
 $color: #007974;
-
 .features {
   margin: 64px auto;
-  // padding: 0 16px;
-
   >ul {
     display: flex;
     flex-wrap: wrap;

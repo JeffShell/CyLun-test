@@ -40,7 +40,6 @@ $color: #007974;
   color: $color;
   display: flex;
   padding: 16px;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

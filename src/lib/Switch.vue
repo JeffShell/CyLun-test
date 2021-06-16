@@ -54,7 +54,6 @@ $grey: #9c9c9c;
   }
   &[disabled] {
     cursor: not-allowed;
-    color: $grey;
     &:hover {
       border-color: $grey;
     }

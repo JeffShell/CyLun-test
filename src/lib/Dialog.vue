@@ -57,12 +57,12 @@ export default {
       }
     }
     const onClickOk = () => {
-      if (props.onClickOk?.() !== false) {
+      if (props.onClickOk && props.onClickOk() !== false) {
         close()
       }
     }
     const onCLickCancel = () => {
-      props.onCLickCancel?.()
+      props.onCLickCancel && props.onCLickCancel()
       close()
     }
     return {

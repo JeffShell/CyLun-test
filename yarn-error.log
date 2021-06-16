@@ -1,8 +1,8 @@
 Arguments: 
-  D:\software_jeff\system_software\nodejs\node.exe D:\software_jeff\system_software\yarn\bin\yarn.js add sass-lang
+  D:\software_jeff\system_software\nodejs\node.exe D:\software_jeff\system_software\yarn\bin\yarn.js install
 
 PATH: 
-  D:\jeff\bin;D:\software_jeff\system_software\cmder\bin;D:\software_jeff\system_software\cmder\vendor\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\local\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\opt\bin;D:\software_jeff\system_software\cmder\vendor\conemu-maximus5\ConEmu\Scripts;D:\software_jeff\system_software\cmder\vendor\conemu-maximus5;D:\software_jeff\system_software\cmder\vendor\conemu-maximus5\ConEmu;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;D:\software_jeff\system_software\yarn\bin;D:\software_jeff\system_software\nodejs;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin;D:\software_jeff\system_software\Go\bin;C:\Android;C:\Windows\System32;C:\Program Files\Pandoc;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\software_jeff\system_software\Python\Python39\Scripts;D:\software_jeff\system_software\Python\Python39;C:\Users\jeff\AppData\Local\Microsoft\WindowsApps;C:\Users\jeff\AppData\Local\Yarn\bin;C:\Users\jeff\AppData\Roaming\npm;D:\software_jeff\work\Microsoft VS Code\bin;C:\Users\jeff\go\bin;D:\software_jeff\work\WebStorm2021\bin;D:\software_jeff\system_software\cmder;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin\vendor_perl;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin\core_perl
+  D:\jeff\bin;D:\software_jeff\system_software\cmder\bin;D:\software_jeff\system_software\cmder\vendor\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\local\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin;D:\software_jeff\system_software\cmder\vendor\git-for-windows\opt\bin;D:\software_jeff\system_software\cmder\vendor\conemu-maximus5\ConEmu\Scripts;D:\software_jeff\system_software\cmder\vendor\conemu-maximus5;D:\software_jeff\system_software\cmder\vendor\conemu-maximus5\ConEmu;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;D:\software_jeff\system_software\yarn\bin;D:\software_jeff\system_software\nodejs;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin;C:\Android;C:\Windows\System32;C:\Program Files\Pandoc;D:\software_jeff\system_software\Python\Python39\Scripts;D:\software_jeff\system_software\Python\Python39;C:\Users\jeff\AppData\Local\Microsoft\WindowsApps;C:\Users\jeff\AppData\Local\Yarn\bin;C:\Users\jeff\AppData\Roaming\npm;D:\software_jeff\work\Microsoft VS Code\bin;D:\software_jeff\work\WebStorm2021\bin;D:\software_jeff\system_software\cmder;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin\vendor_perl;D:\software_jeff\system_software\cmder\vendor\git-for-windows\usr\bin\core_perl
 
 Yarn version: 
   1.22.5
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/sass-lang: Not found
-      at Request.params.callback [as _callback] (D:\software_jeff\system_software\yarn\lib\cli.js:66097:18)
-      at Request.self.callback (D:\software_jeff\system_software\yarn\lib\cli.js:140749:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (D:\software_jeff\system_software\yarn\lib\cli.js:141721:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (D:\software_jeff\system_software\yarn\lib\cli.js:141643:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (internal/streams/readable.js:1327:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  Error: EPERM: operation not permitted, unlink 'D:\filer_jeff\code\cy-lun\node_modules\esbuild\esbuild.exe'
 
 npm manifest: 
   {
@@ -34,14 +24,24 @@ npm manifest:
       "dev": "vite",
       "build": "vite build"
     },
+    "resolutions": {
+      "node-sass": "npm:sass@1.26.11"
+    },
     "dependencies": {
-      "vue": "^3.0.0-rc.1",
-      "vue-router": "4.0.8"
+      "github-markdown-css": "4.0.0",
+      "marked": "1.1.1",
+      "prismjs": "1.21.0",
+      "vue": "3.0.0-rc.1",
+      "vue-router": "4.0.0-beta.3"
     },
     "devDependencies": {
-      "@vue/compiler-sfc": "^3.0.0-rc.1",
-      "sass": "^1.34.0",
-      "vite": "^1.0.0-rc.1"
+      "@vue/compiler-sfc": "3.0.0-rc.1",
+      "rollup-plugin-esbuild": "2.5.0",
+      "rollup-plugin-scss": "2.6.0",
+      "rollup-plugin-terser": "7.0.2",
+      "rollup-plugin-vue": "6.0.0-beta.10",
+      "sass": "1.26.11",
+      "vite": "1.0.0-rc.1"
     }
   }
 
@@ -329,6 +329,17 @@ Lockfile:
       estree-walker "^2.0.1"
       source-map "^0.6.1"
   
+  "@vue/compiler-core@3.1.1":
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.1.1.tgz#4f2c5d70eabd454675714cc8bd2b97f6a8efb196"
+    integrity sha512-Z1RO3T6AEtAUFf2EqqovFm3ohAeTvFzRtB0qUENW2nEerJfdlk13/LS1a0EgsqlzxmYfR/S/S/gW9PLbFZZxkA==
+    dependencies:
+      "@babel/parser" "^7.12.0"
+      "@babel/types" "^7.12.0"
+      "@vue/shared" "3.1.1"
+      estree-walker "^2.0.1"
+      source-map "^0.6.1"
+  
   "@vue/compiler-dom@3.0.11", "@vue/compiler-dom@^3.0.3":
     version "3.0.11"
     resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.0.11.tgz#b15fc1c909371fd671746020ba55b5dab4a730ee"
@@ -337,7 +348,37 @@ Lockfile:
       "@vue/compiler-core" "3.0.11"
       "@vue/shared" "3.0.11"
   
-  "@vue/compiler-sfc@^3.0.0-rc.1", "@vue/compiler-sfc@^3.0.3":
+  "@vue/compiler-dom@3.1.1":
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.1.1.tgz#ef60d856ac2ede5b2ad5c72a7a68122895e3d652"
+    integrity sha512-nobRIo0t5ibzg+q8nC31m+aJhbq8FbWUoKvk6h3Vs1EqTDJaj6lBTcVTq5or8AYht7FbSpdAJ81isbJ1rWNX7A==
+    dependencies:
+      "@vue/compiler-core" "3.1.1"
+      "@vue/shared" "3.1.1"
+  
+  "@vue/compiler-sfc@^3.0.0-rc.1":
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.1.1.tgz#d4e4507c013d0b219f0b106b317ec5bb1cde3398"
+    integrity sha512-lSgMsZaYHF+bAgryq5aUqpvyfhu52GJI2/4LoiJCE5uaxc6FCZfxfgqgw/d9ltiZghv+HiISFtmQVAVvlsk+/w==
+    dependencies:
+      "@babel/parser" "^7.13.9"
+      "@babel/types" "^7.13.0"
+      "@vue/compiler-core" "3.1.1"
+      "@vue/compiler-dom" "3.1.1"
+      "@vue/compiler-ssr" "3.1.1"
+      "@vue/shared" "3.1.1"
+      consolidate "^0.16.0"
+      estree-walker "^2.0.1"
+      hash-sum "^2.0.0"
+      lru-cache "^5.1.1"
+      magic-string "^0.25.7"
+      merge-source-map "^1.1.0"
+      postcss "^8.1.10"
+      postcss-modules "^4.0.0"
+      postcss-selector-parser "^6.0.4"
+      source-map "^0.6.1"
+  
+  "@vue/compiler-sfc@^3.0.3":
     version "3.0.11"
     resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.0.11.tgz#cd8ca2154b88967b521f5ad3b10f5f8b6b665679"
     integrity sha512-7fNiZuCecRleiyVGUWNa6pn8fB2fnuJU+3AGjbjl7r1P5wBivfl02H4pG+2aJP5gh2u+0wXov1W38tfWOphsXw==
@@ -367,10 +408,13 @@ Lockfile:
       "@vue/compiler-dom" "3.0.11"
       "@vue/shared" "3.0.11"
   
-  "@vue/devtools-api@^6.0.0-beta.10":
-    version "6.0.0-beta.11"
-    resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.11.tgz#4fb4161ee41ba75f3f5198d4bfd80e4ffb7f2462"
-    integrity sha512-vpw61AkW9U8c2upjJCljHq9eh1KkD4FJ7DYbRzIETpj9WAw2VESudJZosAk4M+7npBo1Zu1jNQY03HUMVO/czQ==
+  "@vue/compiler-ssr@3.1.1":
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/@vue/compiler-ssr/-/compiler-ssr-3.1.1.tgz#1d08b98601397258ed059b75966e0e94a385d770"
+    integrity sha512-7H6krZtVt3h/YzfNp7eYK41hMDz8ZskiBy+Wby+EDRINX6BD9JQ5C8zyy2xAa7T6Iz2VrQzsaJ/Bb52lTPSS5A==
+    dependencies:
+      "@vue/compiler-dom" "3.1.1"
+      "@vue/shared" "3.1.1"
   
   "@vue/reactivity@3.0.11":
     version "3.0.11"
@@ -379,6 +423,13 @@ Lockfile:
     dependencies:
       "@vue/shared" "3.0.11"
   
+  "@vue/reactivity@3.1.1":
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.1.1.tgz#9c02fd146a6c3b03e7d658b7cf76f4b69b0f98c8"
+    integrity sha512-DsH5woNVCcPK1M0RRYVgJEU1GJDU2ASOKpAqW3ppHk+XjoFLCbqc/26RTCgTpJYd9z8VN+79Q1u7/QqgQPbuLQ==
+    dependencies:
+      "@vue/shared" "3.1.1"
+  
   "@vue/runtime-core@3.0.11":
     version "3.0.11"
     resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.0.11.tgz#c52dfc6acf3215493623552c1c2919080c562e44"
@@ -386,6 +437,14 @@ Lockfile:
     dependencies:
       "@vue/reactivity" "3.0.11"
       "@vue/shared" "3.0.11"
+  
+  "@vue/runtime-core@3.1.1":
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.1.1.tgz#542110c09a643d7d80646a2f071aff6b324c4158"
+    integrity sha512-GboqR02txOtkd9F3Ysd8ltPL68vTCqIx2p/J52/gFtpgb5FG9hvOAPEwFUqxeEJRu7ResvQnmdOHiEycGPCLhQ==
+    dependencies:
+      "@vue/reactivity" "3.1.1"
+      "@vue/shared" "3.1.1"
   
   "@vue/runtime-dom@3.0.11":
     version "3.0.11"
@@ -396,10 +455,24 @@ Lockfile:
       "@vue/shared" "3.0.11"
       csstype "^2.6.8"
   
+  "@vue/runtime-dom@3.1.1":
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/@vue/runtime-dom/-/runtime-dom-3.1.1.tgz#5539bbce132d29f6445b4964cb7b4164a89a5ce6"
+    integrity sha512-o57n/199e/BBAmLRMSXmD2r12Old/h/gf6BgL0RON1NT2pwm6MWaMY4Ul55eyq+FsDILz4jR/UgoPQ9vYB8xcw==
+    dependencies:
+      "@vue/runtime-core" "3.1.1"
+      "@vue/shared" "3.1.1"
+      csstype "^2.6.8"
+  
   "@vue/shared@3.0.11":
     version "3.0.11"
     resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.11.tgz#20d22dd0da7d358bb21c17f9bde8628152642c77"
     integrity sha512-b+zB8A2so8eCE0JsxjL24J7vdGl8rzPQ09hZNhystm+KqSbKcAej1A+Hbva1rCMmTTqA+hFnUSDc5kouEo0JzA==
+  
+  "@vue/shared@3.1.1":
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.1.tgz#2287cfc3dc20e5b20aeb65c2c3a56533bdca801c"
+    integrity sha512-g+4pzAw7PYSjARtLBoDq6DmcblX8i9KJHSCnyM5VDDFFifUaUT9iHbFpOF/KOizQ9f7QAqU2JH3Y6aXjzUMhVA==
   
   accepts@^1.3.5:
     version "1.3.7"
@@ -599,6 +672,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-2.6.0.tgz#36c7dc98fb6a9a76bd6238ec3f77e2425627e939"
     integrity sha512-t+4/y50K/+4xcCRosKkA7W4gTr1MySvLV0q+PxmG7FJ5g+66ChKurYjxBCjHggHH3HA5Hh9cy+lcUGWDqVH+4Q==
   
+  clipboard@^2.0.0:
+    version "2.0.8"
+    resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.8.tgz#ffc6c103dd2967a83005f3f61976aa4655a4cdba"
+    integrity sha512-Y6WO0unAIQp5bLmk1zdThRhgJt/x3ks6f30s3oE3H1mgIEU33XyQjEf8gsf6DxC7NPX8Y1SsNWjUjL/ywLnnbQ==
+    dependencies:
+      good-listener "^1.2.2"
+      select "^1.1.2"
+      tiny-emitter "^2.0.0"
+  
   clone@^1.0.2:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
@@ -747,6 +829,11 @@ Lockfile:
     integrity sha1-xlYFHpgX2f8I7YgUd/P+QBnz730=
     dependencies:
       clone "^1.0.2"
+  
+  delegate@^3.1.2:
+    version "3.2.0"
+    resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
+    integrity sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==
   
   delegates@^1.0.0:
     version "1.0.0"
@@ -954,6 +1041,11 @@ Lockfile:
     dependencies:
       pump "^3.0.0"
   
+  github-markdown-css@^4.0.0:
+    version "4.0.0"
+    resolved "https://registry.yarnpkg.com/github-markdown-css/-/github-markdown-css-4.0.0.tgz#be9f4caf7a389228d4c368336260ffc909061f35"
+    integrity sha512-mH0bcIKv4XAN0mQVokfTdKo2OD5K8WJE9+lbMdM32/q0Ie5tXgVN/2o+zvToRMxSTUuiTRcLg5hzkFfOyBYreg==
+  
   glob-parent@^5.1.0, glob-parent@~5.1.0:
     version "5.1.2"
     resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
@@ -984,6 +1076,13 @@ Lockfile:
       ignore "^5.1.4"
       merge2 "^1.3.0"
       slash "^3.0.0"
+  
+  good-listener@^1.2.2:
+    version "1.2.2"
+    resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
+    integrity sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=
+    dependencies:
+      delegate "^3.1.2"
   
   graceful-fs@^4.1.6, graceful-fs@^4.2.0:
     version "4.2.6"
@@ -1245,6 +1344,11 @@ Lockfile:
       merge-stream "^2.0.0"
       supports-color "^7.0.0"
   
+  joycon@^2.2.5:
+    version "2.2.5"
+    resolved "https://registry.yarnpkg.com/joycon/-/joycon-2.2.5.tgz#8d4cf4cbb2544d7b7583c216fcdfec19f6be1615"
+    integrity sha512-YqvUxoOcVPnCp0VU1/56f+iKSdvIRJYPznH22BdXV3xMk75SFXhWeJkZ8C9XxUWt1b5x2X1SxuFygW1U0FmkEQ==
+  
   js-tokens@^4.0.0:
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -1417,6 +1521,11 @@ Lockfile:
     dependencies:
       sourcemap-codec "^1.4.4"
   
+  marked@^1.1.1:
+    version "1.2.9"
+    resolved "https://registry.yarnpkg.com/marked/-/marked-1.2.9.tgz#53786f8b05d4c01a2a5a76b7d1ec9943d29d72dc"
+    integrity sha512-H8lIX2SvyitGX+TRdtS06m1jHMijKN/XjfH6Ooii9fvxMlh8QdqBfBDkGUpMWH2kQNrtixjzYUa3SH8ROTgRRw==
+  
   media-typer@0.3.0:
     version "0.3.0"
     resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -1505,6 +1614,13 @@ Lockfile:
     version "0.10.0"
     resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.10.0.tgz#32dea2afb3e9926f02ee5ce8794902691a676bf3"
     integrity sha512-PPmu8eEeG9saEUvI97fm4OYxXVB6bFvyNTyiUOBichBpFG8A1Ljw3bY62+5oOjDEMHRnd0Y7HQ+x7uzxOzC6JA==
+  
+  node-sass@4, "node-sass@npm:sass@^1.26.11":
+    version "1.34.1"
+    resolved "https://registry.yarnpkg.com/sass/-/sass-1.34.1.tgz#30f45c606c483d47b634f1e7371e13ff773c96ef"
+    integrity sha512-scLA7EIZM+MmYlej6sdVr0HRbZX5caX5ofDT9asWnUJj21oqgsC+1LuNfm0eg+vM0fCTZHhwImTiCU0sx9h9CQ==
+    dependencies:
+      chokidar ">=3.0.0 <4.0.0"
   
   normalize-path@^3.0.0, normalize-path@~3.0.0:
     version "3.0.0"
@@ -1742,6 +1858,13 @@ Lockfile:
       nanoid "^3.1.23"
       source-map-js "^0.6.2"
   
+  prismjs@^1.21.0:
+    version "1.23.0"
+    resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.23.0.tgz#d3b3967f7d72440690497652a9d40ff046067f33"
+    integrity sha512-c29LVsqOaLbBHuIbsTxaKENh1N2EQBOHaWv7gkHN4dgRbxSREqDnDbtFJYdpPauS4YCplMSNCABQ6Eeor69bAA==
+    optionalDependencies:
+      clipboard "^2.0.0"
+  
   pump@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/pump/-/pump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
@@ -1839,6 +1962,24 @@ Lockfile:
       globby "^11.0.0"
       magic-string "^0.25.7"
   
+  rollup-plugin-esbuild@^2.5.0:
+    version "2.6.1"
+    resolved "https://registry.yarnpkg.com/rollup-plugin-esbuild/-/rollup-plugin-esbuild-2.6.1.tgz#5785532940d49adf1bff5b38e9bd9089262d4e7a"
+    integrity sha512-hskMEQQ4Vxlyoeg1OWlFTwWHIhpNaw6q+diOT7p9pdkk34m9Mbk3aymS/JbTqLXy/AbJi22iuXrucknKpeczfg==
+    dependencies:
+      "@rollup/pluginutils" "^4.1.0"
+      joycon "^2.2.5"
+      strip-json-comments "^3.1.1"
+  
+  rollup-plugin-scss@^2.6.0:
+    version "2.6.1"
+    resolved "https://registry.yarnpkg.com/rollup-plugin-scss/-/rollup-plugin-scss-2.6.1.tgz#22826b4499f511aaf2edb8420faaf04a42e24a33"
+    integrity sha512-IWREkMDJLJbS3aa1aakYYdJc3yPUb4BBrmK8hgThmtr7hWevBvCZ3b0SXm/Tgx53RxV9q1Btf4hD7nczJiDsfw==
+    dependencies:
+      rollup-pluginutils "2"
+    optionalDependencies:
+      node-sass "4"
+  
   rollup-plugin-terser@^7.0.2:
     version "7.0.2"
     resolved "https://registry.yarnpkg.com/rollup-plugin-terser/-/rollup-plugin-terser-7.0.2.tgz#e8fbba4869981b2dc35ae7e8a502d5c6c04d324d"
@@ -1849,7 +1990,7 @@ Lockfile:
       serialize-javascript "^4.0.0"
       terser "^5.0.0"
   
-  rollup-plugin-vue@^6.0.0:
+  rollup-plugin-vue@^6.0.0, rollup-plugin-vue@^6.0.0-beta.10:
     version "6.0.0"
     resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-6.0.0.tgz#e379e93e5ae9a8648522f698be2e452e8672aaf2"
     integrity sha512-oVvUd84d5u73M2HYM3XsMDLtZRIA/tw2U0dmHlXU2UWP5JARYHzh/U9vcxaN/x/9MrepY7VH3pHFeOhrWpxs/Q==
@@ -1863,7 +2004,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/rollup-plugin-web-worker-loader/-/rollup-plugin-web-worker-loader-1.6.1.tgz#9d7a27575b64b0780fe4e8b3bc87470d217e485f"
     integrity sha512-4QywQSz1NXFHKdyiou16mH3ijpcfLtLGOrAqvAqu1Gx+P8+zj+3gwC2BSL/VW1d+LW4nIHC8F7d7OXhs9UdR2A==
   
-  rollup-pluginutils@^2.8.2:
+  rollup-pluginutils@2, rollup-pluginutils@^2.8.2:
     version "2.8.2"
     resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.8.2.tgz#72f2af0748b592364dbd3389e600e5a9444a351e"
     integrity sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==
@@ -1894,12 +2035,17 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
     integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
   
-  sass@^1.34.0:
-    version "1.34.0"
-    resolved "https://registry.yarnpkg.com/sass/-/sass-1.34.0.tgz#e46d5932d8b0ecc4feb846d861f26a578f7f7172"
-    integrity sha512-rHEN0BscqjUYuomUEaqq3BMgsXqQfkcMVR7UhscsAVub0/spUrZGBMxQXFS2kfiDsPLZw5yuU9iJEFNC2x38Qw==
+  sass@^1.26.11:
+    version "1.35.0"
+    resolved "https://registry.yarnpkg.com/sass/-/sass-1.35.0.tgz#37c39e60eb3f82149488a9ca9ae48f888bf9324d"
+    integrity sha512-9joxNu7CoIEdZTDZFnH67NoWE/1VTofGPYiSIntWSE391SfmPu6Kd2Y0ZclDu9WQhVvvPwvo8LHeb/8wHIj95Q==
     dependencies:
       chokidar ">=3.0.0 <4.0.0"
+  
+  select@^1.1.2:
+    version "1.1.2"
+    resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
+    integrity sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
   
   selfsigned@^1.10.8:
     version "1.10.11"
@@ -2009,6 +2155,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
     integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
   
+  strip-json-comments@^3.1.1:
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
+    integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
+  
   supports-color@^5.3.0:
     version "5.5.0"
     resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
@@ -2038,6 +2189,11 @@ Lockfile:
       commander "^2.20.0"
       source-map "~0.7.2"
       source-map-support "~0.5.19"
+  
+  tiny-emitter@^2.0.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
+    integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
   
   to-fast-properties@^2.0.0:
     version "2.0.0"
@@ -2145,14 +2301,21 @@ Lockfile:
       vue "^3.0.3"
       ws "^7.3.1"
   
-  vue-router@4.0.8:
-    version "4.0.8"
-    resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.8.tgz#55d4290a3122444edbc91a3cd2492bb1d0cef494"
-    integrity sha512-42mWSQaH7CCBQDspQTHv63f34VEnZC20g9QNK4WJ/zW8SdIUeT6TQ2i/78fjF/pVBUPLBWrGhvB7uDnaz7O/pA==
-    dependencies:
-      "@vue/devtools-api" "^6.0.0-beta.10"
+  vue-router@4.0.0-beta.3:
+    version "4.0.0-beta.3"
+    resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.0-beta.3.tgz#e46f45807023a4b8ce73a143a216b4c9ea3eb243"
+    integrity sha512-3/cg3n46D9MO9u2nvtGE38gMyUxg8sjt6jMeZ6zbi9sRGAL0PaDHuKS+xWlOOLit7abP5MepNlh84t41gxtP8Q==
   
-  vue@^3.0.0-rc.1, vue@^3.0.3:
+  vue@^3.0.0-rc.1:
+    version "3.1.1"
+    resolved "https://registry.yarnpkg.com/vue/-/vue-3.1.1.tgz#9ad655758a0fa6c0dee5b3d2431d3912a9b381aa"
+    integrity sha512-j9fj3PNPMxo2eqOKYjMuss9XBS8ZtmczLY3kPvjcp9d3DbhyNqLYbaMQH18+1pDIzzVvQCQBvIf774LsjjqSKA==
+    dependencies:
+      "@vue/compiler-dom" "3.1.1"
+      "@vue/runtime-dom" "3.1.1"
+      "@vue/shared" "3.1.1"
+  
+  vue@^3.0.3:
     version "3.0.11"
     resolved "https://registry.yarnpkg.com/vue/-/vue-3.0.11.tgz#c82f9594cbf4dcc869241d4c8dd3e08d9a8f4b5f"
     integrity sha512-3/eUi4InQz8MPzruHYSTQPxtM3LdZ1/S/BvaU021zBnZi0laRUyH6pfuE4wtUeLvI8wmUNwj5wrZFvbHUXL9dw==

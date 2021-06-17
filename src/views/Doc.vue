@@ -84,7 +84,7 @@ $aside-width: 250px;
   > main {
     flex-grow: 1;
     background: #fff;
-    padding: 100px 10px;
+    padding: 0 10px;
     max-width: 800px;
     margin: 0 auto;
   }

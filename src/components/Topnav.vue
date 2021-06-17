@@ -55,7 +55,7 @@ $color: #007974;
     margin-right: auto;
     width: 32px;
     height: 32px;
-    > a> .icon {
+    > a > .icon {
       width: 100%;
       height: 100%;
 
@@ -74,8 +74,6 @@ $color: #007974;
     height: 24px;
     position: absolute;
     left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
     display: none;
   }
   @media (max-width:500px) {

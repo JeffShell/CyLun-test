@@ -1,11 +1,10 @@
 <template>
   <div class="topnav">
       <div class="logo" >
-        <router-link to="/">
           <svg class="icon">
             <use xlink:href="#icon-logo"></use>
           </svg>
-        </router-link>
+          <span>纯风UI</span>
       </div>
     <ul class="menu">
       <li>
@@ -49,20 +48,24 @@ $color: #007974;
   justify-content: center;
   align-items: center;
   background-color: #fff;
-   box-shadow:0px 5px 10px rgb(51 51 51 / 10%);
+   box-shadow:0 5px 10px rgb(51 51 51 / 10%);
   >.logo {
-    max-width: 6em;
-    margin-right: auto;
-    width: 32px;
+    display: flex;
+    align-items: center;
+    width: 132px;
     height: 32px;
-    > a > .icon {
-      width: 100%;
+    >  .icon {
+      width: 2em;
       height: 100%;
-
+    }
+    > span {
+      font-size: 25px;
+      margin-left: 10px;
     }
   }
   > .menu {
     display: flex;
+    margin-left: auto;
     white-space: nowrap;
     flex-wrap: nowrap;
     > li {

@@ -1,10 +1,12 @@
 <template>
   <div class="topnav">
-    <div class="logo">
-      <svg class="icon">
-        <use xlink:href="#icon-logo"></use>
-      </svg>
-    </div>
+      <div class="logo" >
+        <router-link to="/">
+          <svg class="icon">
+            <use xlink:href="#icon-logo"></use>
+          </svg>
+        </router-link>
+      </div>
     <ul class="menu">
       <li>
         <router-link to="/doc">文档</router-link>
@@ -48,12 +50,12 @@ $color: #007974;
   align-items: center;
   background-color: #fff;
    box-shadow:0px 5px 10px rgb(51 51 51 / 10%);
-  > .logo {
+  >.logo {
     max-width: 6em;
     margin-right: auto;
     width: 32px;
     height: 32px;
-    > .icon {
+    > a> .icon {
       width: 100%;
       height: 100%;
 

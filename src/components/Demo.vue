@@ -54,7 +54,7 @@ export default {
 $border-color: #d9d9d9;
 h2 {
   font-size: 35px;
-  padding: 8px 0px;
+  padding: 8px 0;
 }
 .demo {
   &-component {
@@ -63,7 +63,7 @@ h2 {
   }
   &-actions {
     border: 1px solid #eee;
-    padding: 0px;
+    padding: 0;
     > button {
       border: 0;
       width: 100%;
@@ -73,16 +73,16 @@ h2 {
   &-code {
     > .language-html {
       box-sizing: content-box;
-      line-height: 1.1;
+      line-height: 1.7;
       font-family: Consolas, "Courier New", Courier, monospace;
+      font-size: 18px;
       margin: 0;
-      scrollbar-width: none; /* firefox */
-      -ms-overflow-style: none; /* IE 10+ */
-      // overflow-x: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
       overflow-y: auto;
 
       &::-webkit-scrollbar {
-        display: none; /* Chrome Safari */
+        display: none;
       }
     }
     &-enter {

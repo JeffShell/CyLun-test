@@ -57,6 +57,7 @@ $aside-width: 250px;
   height: 100vh;
   > .nav {
     flex-shrink: 0;
+    position: fixed;
   }
   > .content {
     flex-grow: 1;
@@ -84,8 +85,7 @@ $aside-width: 250px;
   > main {
     flex-grow: 1;
     background: #fff;
-    padding: 0 10px;
-    max-width: 800px;
+    padding: 30px 10px;
     margin: 0 auto;
   }
 }

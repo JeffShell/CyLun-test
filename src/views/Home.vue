@@ -17,16 +17,16 @@
   <div class="features">
     <ul>
       <li>
-        <h3>基于 TypeScript </h3>
-        <p>源代码采用 TypeScript 书写,把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不不不不</p>
+        <h3> 使用的技术栈 </h3>
+        <p>本项目使用了Vite创建一个Vue3实例，同时源码采用了TypeScript编写，使编写过场中更容易排错！</p>
       </li>
       <li>
-        <h3>基于 Vue 3</h3>
-        <p>源代码采用 TypeScript 书写,把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不不不不</p>
+        <h3> 组件都有什么 </h3>
+        <p>目前纯风UI编写的组件有：Switch组件、Button组件、Dialog组件、Tabs组件！</p>
       </li>
       <li>
-        <h3>使用了Vite</h3>
-        <p>源代码采用 TypeScript 书写,把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不把把把把把爸安保把把爸不不不不不不不</p>
+        <h3>未来想法</h3>
+        <p>以后会持续更新该项目，按照新的技术添加进纯风UI！</p>
       </li>
     </ul>
     </div>
@@ -65,7 +65,7 @@ $color: #007974;
       grid-template-columns: auto auto;
       grid-template-rows: 1fr auto;
       > h3 {
-        color: c#3a5169;
+        color: #3a5169;
         margin-bottom: 20px;
         grid-area: title;
         font-size: 28px;
@@ -97,9 +97,13 @@ $color: #007974;
   }
   @media (max-width: 550px) {
     > ul {
-    margin-top: 300px;
+      margin-top: 300px;
+      border-top: 0;
       > li {
         width: 100%;
+        > h3 {
+          margin: 0 auto 20px;
+        }
       }
     }
   }
@@ -136,6 +140,14 @@ $color: #007974;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    > h1 {
+      font-size: 5em;
+    }
+    @media (max-width: 550px) {
+      > h1 {
+        font-size: 2em;
+      }
+    }
     >.actions {
       padding: 8px 0;
       a {

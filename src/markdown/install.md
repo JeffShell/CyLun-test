@@ -3,16 +3,34 @@
 打开终端运行下列命令：
 
 
-注意：纯风UI仅支持由 **Vite** 创建的Vue3项目。
+注意：**纯风UI仅支持由 Vite 创建的Vue3项目。**
 
-如果使用了Vue2或者是由Vue-cli创建的项目的话……有考虑换别的框架吗？
+## 项目环境
+
+需要事先安装node，推荐使用yarn管理包。
+
+
+安装纯风UI前需要设置下载源：
+
+```
+//yarn 设置淘宝源
+yarn config set registry https://registry.npm.taobao.org
+
+//node-sass 设置镜像
+yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
+```
+
+## 快速上手
+
+可以使用两种方式之一的一种来安装。
 
 使用`npm`安装：
+
 ```
 npm install cy-lun
 ```
 
-抑或使用`yarn`安装：
+使用`yarn`安装：
 
 ```
 yarn add cy-lun
